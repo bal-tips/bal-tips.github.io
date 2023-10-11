@@ -3,11 +3,23 @@ title = "Ballerina Coding Tips"
 languageCode = 'en-us'
 theme = 'bootstrap-bp-hugo-theme'
 
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true # Enable user to embed HTML snippets in Markdown content
+[markup.highlight]
+codeFences = true
+style = "github"
+
 [params]
 author = "Hasitha Aravinda"
 copyright = "Copyright © 2022–2023, Hasitha Aravinda; all rights reserved."
 paginate = 3
 startYear = 2022
+startPageColumns = true # will show the start page in a Masonry-like mode.
+showListsGrouped = true
+showPostSummary = true
+alwaysExpandMenu = true
 
 footnoteReturnLinkContents = "^"
 
@@ -15,3 +27,11 @@ footnoteReturnLinkContents = "^"
 category = "categories"
 tag = "tags"
 series = "series"
+
+
+  [[menu.footer]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 20
+    pre = "<i class='fas fa-folder'></i>"
