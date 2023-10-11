@@ -1,0 +1,17 @@
+baseURL = "https://bal.tips/"
+title = "Ballerina Coding Tips"
+languageCode = 'en-us'
+theme = 'bootstrap-bp-hugo-theme'
+
+[params]
+author = "Hasitha Aravinda"
+copyright = "Copyright © 2022–2023, Hasitha Aravinda; all rights reserved."
+paginate = 3
+startYear = 2022
+
+footnoteReturnLinkContents = "^"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
