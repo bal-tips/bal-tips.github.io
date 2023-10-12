@@ -3,13 +3,25 @@ title = "Ballerina Coding Tips"
 languageCode = 'en-us'
 theme = 'bootstrap-bp-hugo-theme'
 
+
 [markup]
-[markup.goldmark]
 [markup.goldmark.renderer]
-unsafe = true # Enable user to embed HTML snippets in Markdown content
+  unsafe = true
+  hardWraps = false
+
+[markup.goldmark.parser.attribute]
+ block = true
+ title = true
+
 [markup.highlight]
 codeFences = true
 style = "github"
+
+[markup.tableOfContents]
+  endLevel = 5
+  ordered = false
+  startLevel = 1
+
 
 [params]
 author = "Hasitha Aravinda"
@@ -20,6 +32,7 @@ startPageColumns = true # will show the start page in a Masonry-like mode.
 showListsGrouped = true
 showPostSummary = true
 alwaysExpandMenu = true
+exampleRepo = "https://github.com/bal-tips/BallerinaExamples"
 
 footnoteReturnLinkContents = "^"
 
@@ -29,9 +42,23 @@ tag = "tags"
 series = "series"
 
 
-  [[menu.footer]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    weight = 20
-    pre = "<i class='fas fa-folder'></i>"
+[[menu.footer]]
+identifier = "series"
+name = "Series"
+url = "/series/"
+weight = 10
+pre = "<i class='fas fa-book'></i>"
+
+[[menu.footer]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 30
+pre = "<i class='fas fa-tags'></i>"
+
+[[menu.footer]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 20
+pre = "<i class='fas fa-folder'></i>"
