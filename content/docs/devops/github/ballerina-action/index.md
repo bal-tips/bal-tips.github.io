@@ -16,9 +16,35 @@ categories:
 
 This post covers the use of the `setup-ballerina` GitHub Action to automate the installation of the Ballerina (Swan Lake) distribution in the GitHub Action environment.
 
+<!--more-->
+
 The following code block shows how you can configure the GitHub Action to build your Ballerina project. You can find a working example of this in this [repository](https://github.com/hasithaa/example-setup-ballerina/).
 
-{{< optfigure src="action" >}}
+__`test-workflow.yaml`__
+```yaml {linenos=table,title="test-workflow.yaml"}
+name: Test Workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  test_linux:
+    name: Example Job - ballerina-platform/setup-ballerina
+    runs-on: "ubuntu-latest" 
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ballerina
+        uses: ballerina-platform/setup-ballerina@v1
+        with:
+          version: 2201.8.0
+      - name: Print Ballerina Version
+        run: bal version
+      - name: Build Ballerina Project
+        run: bal build
+        working-directory: my_project
+```
+
 
 * The `setup-ballerina` GitHub Action `v1` release requires a mandatory input of the Ballerina Swan Lake distribution version in the form of "Swan Lake channel" as listed in the `bal dist list` command. i.e. `2201.5.0`, `2201.6.0`, etc. This will install Ballerina on workflow environment and `bal` command is added to the `PATH`.
 * This action is supported on Ubuntu, MacOS, and Windows, and facilitates easy integration of Ballerina into your GitHub workflow.
@@ -35,8 +61,7 @@ This provides greater flexibility and choice for users, allowing them to choose 
 | Architecture                 | Composite Actions | Docker container                      |
 | Supported Ballerina Versions | Swan Lake         | 1.x and Swan Lake                     |
 | Full `bal` Command Support   | Yes               | Limited to `bal build` and `bal push` |
-
-
+{.table .table-striped .table-bordered .table-responsive .table-hover .table-sm}
 
 In summary, setup-ballerina provides more flexibility and full bal command support. The choice of which action to use ultimately depends on your specific needs and workflow requirements.
 
