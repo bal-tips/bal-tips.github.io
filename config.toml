@@ -3,6 +3,7 @@ title = "Ballerina Coding Tips"
 languageCode = 'en-us'
 theme = 'bootstrap-bp-hugo-theme'
 
+paginate= 6
 
 [markup]
 [markup.goldmark.renderer]
@@ -42,7 +43,17 @@ tag = "tags"
 series = "series"
 
 
+[menu]
+
 [[menu.footer]]
+name = 'Site Map'
+identifier = 'site'
+pre='<i class="fas fa-sitemap"></i>'
+weight = 1
+
+[[menu.footer]]
+parent= 'site'
+params={ group='sitemap'}
 identifier = "series"
 name = "Series"
 url = "/series/"
@@ -50,6 +61,8 @@ weight = 10
 pre = "<i class='fas fa-book'></i>"
 
 [[menu.footer]]
+parent= 'site'
+params={ group='sitemap'}
 identifier = "tags"
 name = "Tags"
 url = "/tags/"
@@ -57,8 +70,85 @@ weight = 30
 pre = "<i class='fas fa-tags'></i>"
 
 [[menu.footer]]
+parent= 'site'
+params={ group='sitemap'}
 identifier = "categories"
 name = "Categories"
 url = "/categories/"
 weight = 20
 pre = "<i class='fas fa-folder'></i>"
+
+[[menu.footer]]
+identifier = "more"
+name = "More"
+weight = 100
+pre = "<i class='fas fa-ellipsis-h'></i>"
+
+[[menu.footer]]
+parent= 'more'
+params={ group='about'}
+name='About Author'
+pre='<i class="fas fa-user"></i>'
+url='https://hasithaa.github.io/'
+weight = 90010
+
+[[menu.footer]]
+parent= 'more'
+params={ group='about'}
+name='Website Source'
+pre='<i class="fab fa-github"></i>'
+url='https://github.com/hasithaa/bal.tips'
+weight = 90020
+
+[[menu.footer]]
+parent= 'more'
+params={ group='about'}
+name='Report an Issue'
+pre='<i class="fas fa-bug"></i>'
+url='https://github.com/hasithaa/bal.tips'
+weight = 90030
+
+[[menu.footer2]]
+name = 'About Ballerina'
+identifier = 'links'
+weight = 30000
+
+[[menu.footer2]]
+parent= 'links'
+params={ group = 'ballerina'}
+name = 'ballerina.io'
+pre = '<i class="fas fa-external-link-alt"></i>'
+url = 'https://ballerina.io'
+weight = 30050
+
+[[menu.footer2]]
+parent= 'links'
+params={ group = 'ballerina'}
+name = 'Ballerina by examples'
+pre = '<i class="fas fa-external-link-alt"></i>'
+url = 'https://ballerina.io/learn/by-example/'
+weight = 30100
+
+[[menu.footer2]]
+parent= 'links'
+params={ group = 'ballerina'}
+name = 'Ballerina Language Specification'
+pre = '<i class="fas fa-external-link-alt"></i>'
+url = 'https://ballerina.io/spec/lang/master/'
+weight = 300105
+
+[[menu.footer2]]
+parent= 'links'
+params={ group = 'ballerina'}
+name = 'Twitter Handler'
+pre = '<i class="fab fa-twitter"></i>'
+url = 'https://twitter.com/ballerinalang'
+weight = 300120
+
+[[menu.footer2]]
+parent= 'links'
+params={ group = 'ballerina'}
+name = 'Talk to Community'
+pre = '<i class="fab fa-discord"></i>'
+url = 'https://discord.gg/ballerinalang'
+weight = 300125
