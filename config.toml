@@ -5,26 +5,50 @@ theme = 'bootstrap-bp-hugo-theme'
 
 paginate= 6
 
+author = "Hasitha Aravinda"
+copyright = "Hasitha Aravinda"
+enableRobotsTXT = true
+pygmentsCodeFences = true
+canonifyurls = true
+
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+
+[permalinks]
+posts = "/:year/:month/:slug/"
+post = "/:year/:month/:slug/"
+pages = "/:slug/"
+page = "/:slug/"
+
+
 [markup]
 [markup.goldmark.renderer]
-  unsafe = true
-  hardWraps = false
+unsafe = true
+hardWraps = false
 
 [markup.goldmark.parser.attribute]
- block = true
- title = true
+block = true
+title = true
 
 [markup.highlight]
 codeFences = true
 style = "github"
 
 [markup.tableOfContents]
-  endLevel = 5
-  ordered = false
-  startLevel = 1
+endLevel = 5
+ordered = false
+startLevel = 1
 
 
 [params]
+description = '''"Ballerina Coding Tips" provides useful tips and code snippets for Ballerina programmers.
+ Despite being a fairly new language, Ballerina has numerous features that may be unknown to developers. 
+ This blog aims to share some of these features and is based on my own views and experiences as 
+ a member of the Ballerina Language Design and Development team.'''
+privacyNotice = ''' ⚠️ This site utilizes Google Analytics and cookies 🍪 to enhance your browsing experience. 
+By using this site, you acknowledge and accept the usage of these technologies. 🙏 Thank you!'''
+images = ["logo.png"]
 author = "Hasitha Aravinda"
 copyright = "Copyright © 2022–2023, Hasitha Aravinda; all rights reserved."
 paginate = 3
@@ -152,3 +176,9 @@ name = 'Talk to Community'
 pre = '<i class="fab fa-discord"></i>'
 url = 'https://discord.gg/ballerinalang'
 weight = 300125
+
+
+[social]
+github           = "hasithaa"
+linkedin         = "hasithaaravinda"
+twitter          = "hasithaAravinda"
