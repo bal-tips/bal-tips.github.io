@@ -12,6 +12,8 @@ tags:
     - CI/CD
 categories:
     - DevOps
+aliases:
+    - /docs/devops/github/ballerina-action/
 ---
 
 This post covers the use of the `setup-ballerina` GitHub Action to automate the installation of the Ballerina (Swan Lake) distribution in the GitHub Action environment.
